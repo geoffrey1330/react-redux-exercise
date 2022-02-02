@@ -3,7 +3,7 @@ import { useForm } from 'react-hook-form';
 import { useDispatch, useSelector } from 'react-redux';
 
 const AddUser = ({editUser, users,userId,createUser,closeAdd}) => {
-  const { register, handleSubmit, errors } = useForm();
+  const { register, handleSubmit,errors } = useForm();
   const [email, setEmail] = useState('')
   const [name, setName] = useState('')
   const [id, setId] = useState('')
@@ -68,7 +68,10 @@ const AddUser = ({editUser, users,userId,createUser,closeAdd}) => {
                 value={name}
                 onChange={(e) => setName(e.target.value)}
                 ref={register({required: true})}
-             />
+              />
+              <br />
+              {errors.name && <span>Name is required</span>}
+            <br />
           </div>
         </div>
         <div className="form-group row">
@@ -83,7 +86,10 @@ const AddUser = ({editUser, users,userId,createUser,closeAdd}) => {
             value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 ref={register({required: true})}
-             />
+              />
+               <br />
+              {errors.email && <span>Email is required</span>}
+            <br />
           </div>
         </div> 
         <div className="btn-container">
