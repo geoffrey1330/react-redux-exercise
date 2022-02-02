@@ -6,9 +6,7 @@ const AddUser = ({editUser, users,userId,createUser,closeAdd}) => {
   const { register, handleSubmit,errors } = useForm();
   const [email, setEmail] = useState('')
   const [name, setName] = useState('')
-  const [id, setId] = useState('')
-  const [username, setUsername] = useState('')
-  const [address, setAddress] = useState('')
+  
 
   const dispatch = useDispatch()
   
@@ -19,10 +17,7 @@ const AddUser = ({editUser, users,userId,createUser,closeAdd}) => {
     
     setName(currentUser ? currentUser.name : '')
     setEmail(currentUser ? currentUser.email : '')
-    setId(currentUser ? currentUser.id : '')
-    setUsername(currentUser ? currentUser.username : '')
-    setAddress(currentUser ? currentUser.address : '')
-
+    
     inputs.forEach(input => {
      Object.keys(errors).forEach(key => {
       if (key === input.name) {
@@ -39,7 +34,7 @@ const AddUser = ({editUser, users,userId,createUser,closeAdd}) => {
   }, [errors]);
 
   const submitHandler = (e) => {
-    let data={id,email,name,username,address}
+    let data={email,name}
     //e.preventDefault()
     if (!userId) {
      

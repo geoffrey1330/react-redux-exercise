@@ -34,12 +34,13 @@ export const createUser = (dat)=> async (dispatch) => {
     }
 }
 
-export const DeletUser = (data)=> async (dispatch) => {
+export const DeletUser = (id)=> async (dispatch) => {
 
     try {
+        const { data } = await axios.delete(`https://my-json-server.typicode.com/karolkproexe/jsonplaceholderdb/data/${id}`)
         dispatch({
             type: DELETE_USER,
-            payload: data
+            payload:id
         })
 
         
@@ -50,13 +51,17 @@ export const DeletUser = (data)=> async (dispatch) => {
     }
 }
 
-export const EditUser = (data)=> async (dispatch) => {
-    const id = data.userId;
-    const res = data;
-    try {
+export const EditUser = (dat)=> async (dispatch) => {
+    const id = dat.userId;
+   // const res = data;
+   
+    try
+    {
+        const { data } = await axios.patch(`https://my-json-server.typicode.com/karolkproexe/jsonplaceholderdb/data/${id}`, dat.data)
+        console.log(data)
         dispatch({
             type: EDIT_USER,
-            payload: {res, id}
+            payload: {data, id}
         })
       
     }  

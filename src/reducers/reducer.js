@@ -20,7 +20,7 @@ const reducer = (state = initialState, action) => {
             const { id } = action.payload;
             const userindex = state.users.findIndex(user => user.id === id);
             users = state.users.slice();
-            users.splice(userindex, 1, action.payload.res.data);
+            users.splice(userindex, 1, action.payload.data);
             return {...state, users};
 
         default:
