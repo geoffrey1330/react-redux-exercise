@@ -1,0 +1,92 @@
+/* userList */
+.add-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 10px;
+}
+
+.card {
+    padding: 20px !important;
+    margin: 20px !important;
+}
+
+h1 {
+    padding: 20px;
+}
+
+.add-btn {
+    width: 140px;
+    margin-left: 30px;
+}
+
+.arrow-btn {
+    width: 30px;
+    margin-left: 5px;
+}
+
+tr {
+    height: 100px;
+}
+
+.table th, .table td {
+    vertical-align: middle !important;
+}
+.td-btn{
+    width: 90px;
+}
+
+.table .thead-light th {
+    vertical-align: middle;
+}
+
+/* addUser */
+
+form {
+    padding-top: 75px;
+   
+}
+
+.cancel-btn {
+    margin-right: 10px;
+}
+
+.btn-container {
+    margin-top: 65px;
+    text-align: right;
+}
+
+.form-btn{
+    width:90px;
+}
+
+/* deleteUser */
+
+.delete-modal {
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+   
+}
+
+.delete-card {
+    position: absolute;
+    height: 300px;
+    width: 500px;
+    top: 50%;
+    left: 50%;
+    padding: 20px;
+    transform: translate(-50%, -50%);
+    background-color: white;
+}
+
+.modal-btn-card {
+    margin-top: 184px;
+    text-align: right;
+}
+
+.modal-btn-card .btn {
+    margin-left: 10px;
+}
