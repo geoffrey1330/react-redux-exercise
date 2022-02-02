@@ -2,7 +2,8 @@ import React, {useState} from 'react';
 
 const UserList = ({users, openAdd,openDelete}) => {
     const [sortedUsers, setSortedUsers] = useState();
-    const [upward, setUpward] = useState();
+    const [upward, setUpward] = useState(true);
+
     const userr = users.map(user =>
     {
 
@@ -18,6 +19,7 @@ const UserList = ({users, openAdd,openDelete}) => {
             </tr>
         )
     });
+
     const sortUsers = () => {
         let sorted = users.slice();
         {
