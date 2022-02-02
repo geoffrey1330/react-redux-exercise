@@ -35,12 +35,14 @@ function App() {
   };
 
   useEffect(() => {
+    
     dispatch(fetchUsers())
 
 }, [])
   return (
     <main>
     <h1>Dashboard</h1>
+     
     {!showaddUser ?
      <UserList 
      users={users} 

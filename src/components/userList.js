@@ -79,23 +79,25 @@ const UserList = ({users, openAdd,openDelete}) => {
                 </button>
                 
             </div>
-        </div>
-        <table className="table">
-            <thead className="thead-light">
-                <tr>
-                    <th>Id</th>
-                    <th>Name</th>
-                    <th>Username</th>
-                    <th>Email</th>
-                    <th>City</th>
-                    <th>Edit</th>
-                    <th>Delete</th>
-                </tr>
-            </thead>
-            <tbody>
-                    {sortedUsers ? sortedUsers : userr  }
-            </tbody>
-        </table>
+            </div>
+            {users.length === 0 ? <h1>No User On this Table</h1> :
+                <table className="table">
+                    <thead className="thead-light">
+                        <tr>
+                            <th>Id</th>
+                            <th>Name</th>
+                            <th>Username</th>
+                            <th>Email</th>
+                            <th>City</th>
+                            <th>Edit</th>
+                            <th>Delete</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    
+                        {sortedUsers ? sortedUsers : userr}
+                    </tbody>
+                </table>}
         </div>
     )
 
