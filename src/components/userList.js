@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import AsortUsers from './Asorted'
+
 const UserList = ({users, openAdd,openDelete}) => {
     const [sortedUsers, setSortedUsers] = useState();
     
