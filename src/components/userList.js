@@ -20,10 +20,10 @@ const UserList = ({users, openAdd,openDelete}) => {
         )
     });
 
-    const sortUsers = (val) => {
+    const sortUsers = (ascend) => {
         let sorted = users.slice();
         {
-            val ?
+            ascend ?
                 sorted.sort((x,y) =>
                 {
                     let UserX = x.username.toLowerCase();
