@@ -1,6 +1,6 @@
-import React, {Component,useState,useEffect} from 'react';
+import React, {useState,useEffect} from 'react';
 import './App.css';
-//import {connect} from 'react-redux';
+
 import {fetchUsers, createUser, DeletUser, EditUser} from './actions/actions';
 import UserList from './components/userList';
 import 'bootstrap/dist/css/bootstrap.css';

@@ -1,6 +1,6 @@
 import React, {useState,useEffect} from 'react';
 import { useForm } from 'react-hook-form';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch} from 'react-redux';
 
 const AddUser = ({editUser, users,userId,createUser,closeAdd}) => {
   const { register, handleSubmit,errors } = useForm();
