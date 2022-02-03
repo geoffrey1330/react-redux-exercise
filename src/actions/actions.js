@@ -53,7 +53,7 @@ export const DeletUser = (id)=> async (dispatch) => {
 
 export const EditUser = (dat)=> async (dispatch) => {
     const id = dat.userId;
-   // const res = data;
+  
    
     try
     {
