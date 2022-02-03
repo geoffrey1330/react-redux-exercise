@@ -1,8 +1,8 @@
 import React, {useState} from 'react';
-
+import AsortUsers from './Asorted'
 const UserList = ({users, openAdd,openDelete}) => {
     const [sortedUsers, setSortedUsers] = useState();
-    const [upward, setUpward] = useState(true);
+    
 
     const userr = users.map(user =>
     {
@@ -20,10 +20,10 @@ const UserList = ({users, openAdd,openDelete}) => {
         )
     });
 
-    const sortUsers = () => {
+    const sortUsers = (val) => {
         let sorted = users.slice();
         {
-            upward ?
+            val ?
                 sorted.sort((x,y) =>
                 {
                     let UserX = x.username.toLowerCase();
@@ -54,6 +54,33 @@ const UserList = ({users, openAdd,openDelete}) => {
         })
         setSortedUsers(sortedUsers);
     }
+
+    // const sortUsers = () => {
+    //     let sorted = users.slice();
+    //         sorted.sort((x,y) =>
+    //         {
+    //             let UserX = x.username.toLowerCase();
+    //             let UserY = y.username.toLowerCase();
+        
+    //             return (UserX > UserY) ? -1 : (UserX < UserY) ? 1 : 0;
+    //         })
+        
+       
+    //     const sortedUsers = sorted.map(user => {
+    //         return (
+    //             <tr key={user.id}>
+    //                 <td>{user.id}</td>
+    //                 <td>{user.name}</td>
+    //                 <td>{user.username}</td>
+    //                 <td>{user.email}</td>
+    //                 <td>{user.address? user.address.city : ''}</td>
+    //                 <td><button type="button" className="btn btn-warning td-btn" onClick={() => openAdd(user.id)}>Edit</button></td>
+    //                 <td><button type="button" className="btn btn-danger td-btn" onClick={() => openDelete(user.id)}>Delete</button></td>
+    //             </tr>
+    //         )
+    //     })
+    //     setSortedUsers(sortedUsers);
+    // }
     return (
         <div className="card">
         <div className="add-row">
@@ -64,13 +91,13 @@ const UserList = ({users, openAdd,openDelete}) => {
             <button 
                 type="button" 
                 className="btn btn-primary arrow-btn" 
-                        onClick={() => { setUpward(true);sortUsers()}}>
+                        onClick={() =>sortUsers(true)}>
                    &#8593;
                     </button>
                 <button 
                 type="button" 
                 className="btn btn-primary arrow-btn" 
-                        onClick={() => { setUpward(false);sortUsers()}}>
+                        onClick={() => sortUsers(false)}>
                    &#8595;
                 </button>
                 <button 
@@ -100,6 +127,7 @@ const UserList = ({users, openAdd,openDelete}) => {
                         {sortedUsers ? sortedUsers : userr}
                     </tbody>
                 </table>}
+                
         </div>
     )
 
